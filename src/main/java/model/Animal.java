@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class Animal {
 
-    private String speciec;
+    private String species;
     private String eyeColor;
     private boolean wool;
 
-    public Animal(final String speciec,
+    public Animal(final String species,
                   final String eyeColor,
                   final boolean wool) {
-        this.speciec = speciec;
+        this.species = species;
         this.eyeColor = eyeColor;
         this.wool = wool;
     }
@@ -19,7 +19,7 @@ public class Animal {
     @Override
     public String toString() {
         return "component.Animal{" +
-                "speciec='" + speciec + '\'' +
+                "species='" + species + '\'' +
                 ", eyeColor='" + eyeColor + '\'' +
                 ", wool=" + wool +
                 '}';
@@ -30,16 +30,16 @@ public class Animal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         final Animal animal = (Animal) o;
-        return wool == animal.wool && Objects.equals(speciec, animal.speciec) && Objects.equals(eyeColor, animal.eyeColor);
+        return wool == animal.wool && Objects.equals(species, animal.species) && Objects.equals(eyeColor, animal.eyeColor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(speciec, eyeColor, wool);
+        return Objects.hash(species, eyeColor, wool);
     }
 
-    public String getSpeciec() {
-        return speciec;
+    public String getSpecies() {
+        return species;
     }
 
     public String getEyeColor() {
@@ -52,13 +52,13 @@ public class Animal {
 
 
     public static class AnimalBuilder {
-        private String speciec;
+        private String species;
         private String eyeColor;
         private boolean wool;
 
 
-        public AnimalBuilder speciec(String speciec) {
-            this.speciec = speciec;
+        public AnimalBuilder species(String species) {
+            this.species = species;
             return this;
         }
 
@@ -73,7 +73,7 @@ public class Animal {
         }
 
         public Animal build() {
-            return new Animal(speciec, eyeColor, wool);
+            return new Animal(species, eyeColor, wool);
         }
 
     }
