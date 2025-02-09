@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Barrel {
+public class Barrel implements Comparable<Barrel>{
 
     private int volume;
     private String storeMaterial;
@@ -34,6 +34,11 @@ public class Barrel {
     @Override
     public int hashCode() {
         return Objects.hash(volume, storeMaterial, shapeMaterial);
+    }
+
+    @Override
+    public int compareTo(Barrel other) {
+        return Integer.compare(this.volume, other.volume);
     }
 
     public int getVolume() {
