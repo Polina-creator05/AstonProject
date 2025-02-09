@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Animal {
+public class Animal implements Comparable<Animal>{
 
     private String species;
     private String eyeColor;
@@ -31,6 +31,11 @@ public class Animal {
         if (o == null || getClass() != o.getClass()) return false;
         final Animal animal = (Animal) o;
         return wool == animal.wool && Objects.equals(species, animal.species) && Objects.equals(eyeColor, animal.eyeColor);
+    }
+
+    @Override
+    public int compareTo(Animal other) {
+        return this.species.compareTo(other.species);
     }
 
     @Override
