@@ -32,7 +32,7 @@ public class Person implements Comparable<Person>{
 
     @Override
     public int compareTo(Person other) {
-        return this.surname.compareTo(other.surname);
+        return this.surname.toLowerCase().compareTo(other.surname.toLowerCase());
     }
 
     @Override

@@ -35,7 +35,7 @@ public class Animal implements Comparable<Animal>{
 
     @Override
     public int compareTo(Animal other) {
-        return this.species.compareTo(other.species);
+        return this.species.toLowerCase().compareTo(other.species.toLowerCase());
     }
 
     @Override
