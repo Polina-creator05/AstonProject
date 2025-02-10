@@ -17,7 +17,7 @@ public class ValidationUtils {
     }
 
     public static boolean isValidString(String input) {
-        return input != null && !input.trim().isEmpty();
+        return input != null && !input.isEmpty();
     }
 
     public static boolean isValidSex(String input) {
