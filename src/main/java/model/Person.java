@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Person {
+public class Person{
     private Sex sex;
     private int age;
     private String surname;
@@ -29,6 +29,7 @@ public class Person {
         final Person person = (Person) o;
         return age == person.age && sex == person.sex && Objects.equals(surname, person.surname);
     }
+
 
     @Override
     public int hashCode() {
