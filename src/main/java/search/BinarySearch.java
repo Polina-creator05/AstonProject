@@ -1,14 +1,16 @@
 package search;
 
-public class BinarySearch<T extends Comparable<T>> {
+import java.util.Comparator;
 
-    public int search(T[] array, T target) {
+public class BinarySearch<T>{
+
+    public int search(T[] array, T target, Comparator<T> comparator) {
         int left = 0;
         int right = array.length - 1;
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int comparison = compareElements(array[mid], target);
+            int comparison = compareElements(array[mid], target, comparator);
 
             if (comparison == 0) {
                 return mid; // Элемент найден
@@ -21,11 +23,9 @@ public class BinarySearch<T extends Comparable<T>> {
         return -1; // Элемент не найден
     }
 
-    private int compareElements(T element1, T element2) {
-        if (element1 instanceof String && element2 instanceof String) {
-            return ((String) element1).toLowerCase().compareTo(((String) element2).toLowerCase());
-        }
-        return element1.compareTo(element2);
+    private int compareElements(T element1, T element2, Comparator<T> comparator) {
+        return comparator.compare(element1, element2);
+
     }
 }
 

@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Person implements Comparable<Person>{
+public class Person{
     private Sex sex;
     private int age;
     private String surname;
@@ -30,10 +30,6 @@ public class Person implements Comparable<Person>{
         return age == person.age && sex == person.sex && Objects.equals(surname, person.surname);
     }
 
-    @Override
-    public int compareTo(Person other) {
-        return this.surname.toLowerCase().compareTo(other.surname.toLowerCase());
-    }
 
     @Override
     public int hashCode() {
