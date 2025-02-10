@@ -10,8 +10,7 @@ public class AnimalComparator implements Comparator<Animal> {
 
     public AnimalComparator(){
         animalComparator = new AnimalSpeciesComparator()
-                .thenComparing(new AnimalEyeColorComparator())
-                .thenComparing(new AnimalWoolComparator());
+                .thenComparing(new AnimalEyeColorComparator());
     }
 
     @Override
