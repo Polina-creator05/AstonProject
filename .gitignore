@@ -48,4 +48,4 @@ temp.*
 *.tmp
 *.temp
 
-/src/main/java/input/Tests.java
+/src/main/java/input/tests/
