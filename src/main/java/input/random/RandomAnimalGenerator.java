@@ -17,6 +17,6 @@ public class RandomAnimalGenerator implements RandomDataProvider {
         String eyesColor = EYES_COLOR[random.nextInt(EYES_COLOR.length)];
         boolean hasWool = random.nextBoolean();
 
-        return String.format("\"%s, %s, %b\"", type, eyesColor, hasWool);
+        return String.format("%s, %s, %b", type, eyesColor, hasWool);
     }
 }

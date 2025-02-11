@@ -31,6 +31,6 @@ public class RandomPersonGenerator implements RandomDataProvider {
                 ? MALE_SURNAMES[random.nextInt(MALE_SURNAMES.length)]
                 : FEMALE_SURNAMES[random.nextInt(FEMALE_SURNAMES.length)];
 
-        return String.format("\"%s, %d, %s\"", sex, age, surname);
+        return String.format("%s, %d, %s", sex, age, surname);
     }
 }

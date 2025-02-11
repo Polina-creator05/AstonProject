@@ -15,6 +15,6 @@ public class RandomBarrelGenerator implements RandomDataProvider {
         String storeMaterial = STORE_MATERIAL[random.nextInt(STORE_MATERIAL.length)];
         String shapeMaterial = SHAPE_MATERIAL[random.nextInt(SHAPE_MATERIAL.length)];
 
-        return String.format("\"%d, %s, %s\"", volume, storeMaterial, shapeMaterial);
+        return String.format("%d, %s, %s", volume, storeMaterial, shapeMaterial);
     }
 }
