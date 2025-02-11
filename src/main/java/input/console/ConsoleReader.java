@@ -9,7 +9,7 @@ public class ConsoleReader {
             increaseArray();
         }
 
-        data[count++] = String.format("\"%s\"", str);
+        data[count++] = String.format("%s", str);
         return trimArray();
     }
 
