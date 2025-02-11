@@ -47,5 +47,3 @@ tmp.*
 temp.*
 *.tmp
 *.temp
-
-/src/main/java/input/tests/
