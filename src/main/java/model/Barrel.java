@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Barrel {
+public class Barrel{
 
     private int volume;
     private String storeMaterial;
@@ -35,6 +35,7 @@ public class Barrel {
     public int hashCode() {
         return Objects.hash(volume, storeMaterial, shapeMaterial);
     }
+
 
     public int getVolume() {
         return volume;
