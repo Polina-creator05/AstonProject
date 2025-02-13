@@ -20,4 +20,3 @@ public class RandomAnimalGenerator implements RandomDataProvider {
         return String.format("%s, %s, %b", type, eyesColor, hasWool);
     }
 }
-

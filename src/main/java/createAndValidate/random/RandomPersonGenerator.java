@@ -35,4 +35,3 @@ public class RandomPersonGenerator implements RandomDataProvider {
         return String.format("%s, %d, %s", sex, age, surname);
     }
 }
-

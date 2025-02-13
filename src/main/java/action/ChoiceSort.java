@@ -10,7 +10,6 @@ import sorting.Sorting;
 import java.util.Scanner;
 
 public class ChoiceSort implements Action {
-    ConsoleDataPrinter consoleDataPrinter = new ConsoleDataPrinter();
     Sorting sorting = new Sorting();
     ArrayOfObjects arrayOfObjects = new ArrayOfObjects();
 
@@ -19,18 +18,17 @@ public class ChoiceSort implements Action {
     @Override
     public void call() {
 
-
         while (true) {
-            consoleDataPrinter.printInstructions(Instruction.getMessageSort(), TableForInstruction.getTableSort());
+            ConsoleDataPrinter.printInstructions(Instruction.getMessageSort(), TableForInstruction.getTableSort());
             String userInput = new Scanner(System.in).nextLine();
-            if (Verificator.verifayUserInput(userInput, TableForInstruction.getTableClass()[0].length)) {
+            if (Verificator.verifyUserInput(userInput, TableForInstruction.getTableClass()[0].length)) {
                 inputSortString= userInput;
                 try {
                     sorting.getSortedArray(ChoiceClass.inputClassString, userInput);
-                    consoleDataPrinter.printCollection(arrayOfObjects.getArray());
+                    ConsoleDataPrinter.printCollection(arrayOfObjects.getArray());
                     break;
                 } catch (ClassCastException e) {
-                    System.out.println("Для данного типа объектов выбранный вариант сортировки невозможен. Выберите другой тип сортировки");
+                    ConsoleDataPrinter.printInfoMessage("Для данного типа объектов выбранный вариант сортировки невозможен. Выберите другой тип сортировки");
                 }
             }
         }
