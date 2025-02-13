@@ -9,8 +9,7 @@ import repository.ArrayOfObjects;
 
 import java.util.Scanner;
 
-public class ChoiceWayFill implements Action {
-    ConsoleDataPrinter consoleDataPrinter = new ConsoleDataPrinter<Void>();
+public class ChoiceWayFill<T> implements Action {
     FillingArray fillingArray = new FillingArray();
     ArrayOfObjects arrayOfObjects = new ArrayOfObjects();
 
@@ -18,14 +17,24 @@ public class ChoiceWayFill implements Action {
     @Override
     public void call() {
         while (true) {
-            consoleDataPrinter.printInstructions(Instruction.getMessageFill(), TableForInstruction.getTableFill());
+            ConsoleDataPrinter.printInstructions(Instruction.getMessageFill(), TableForInstruction.getTableFill());
             String userInput = new Scanner(System.in).nextLine();
-            if (Verificator.verifayUserInput(userInput, TableForInstruction.getTableClass()[0].length)) {
-                arrayOfObjects.setArray(fillingArray.fill(ChoiceClass.inputClassString, ChoiceLength.arrayLenght, userInput));
-                consoleDataPrinter.printCollection(arrayOfObjects.getArray());
-                break;
+            if (Verificator.verifyUserInput(userInput, TableForInstruction.getTableClass()[0].length)) {
+                T[] array = fillingArray.fill(ChoiceClass.inputClassString, ChoiceLength.arrayLenght, userInput);
+                if(array.length>=2){
+                    arrayOfObjects.setArray(array);
+                    ConsoleDataPrinter.printInfoMessage("Исходный массив данных:");
+                    ConsoleDataPrinter.printCollection(arrayOfObjects.getArray());
+                    break;
+                }else if(array.length==1){
+                    ConsoleDataPrinter.printErrorMessage("Количество объектов недостаточно для последующей сортировки");
+                }else {
+                    ConsoleDataPrinter.printErrorMessage("Данные файла не соответствуют выбранному типу объектов");
+                }
             }
         }
     }
 }
+
+
 
