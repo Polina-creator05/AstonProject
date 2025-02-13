@@ -8,31 +8,26 @@ import createAndValidate.factory.PersonFactory;
 import model.Animal;
 import model.Barrel;
 import model.Person;
+import repository.MapRepository;
 
 import java.util.Map;
 
 public class FillingArray {
 
-
-    Map<String, Class<?>> classMap = Map.of("1", Animal.class, "2", Barrel.class, "3", Person.class);
-
-    Map<String, EntityFactory> entityFactoryMap = Map.of("1", new AnimalFactory(),
-            "2", new BarrelFactory(),
-            "3", new PersonFactory());
-
-    Map<String, FillingWay> fillingWayMap = Map.of("1", new FillingFromFile(),
-            "2", new FillingRandom(),
-            "3", new FillingByYourself());
+    MapRepository mapRepository = new MapRepository();
 
 
     public <T> T[] fill(String inputClass, int arrayLength, String inputWayFill) {
-        Class clacc = classMap.get(inputClass);
+        Class clacc = mapRepository.getClassMap().get(inputClass);
 
-        String[] strings = fillingWayMap.get(inputWayFill).collecteData(arrayLength, clacc);
 
-        EntityFactory<T> entityFactory = entityFactoryMap.get(inputClass);
+        String[] strings = mapRepository.getFillingWayMap().get(inputWayFill).collecteData(arrayLength, clacc);
 
-        T [] arrayObjects = (T[]) Validator.validate(strings, entityFactory, clacc);
+        EntityFactory<T> entityFactory = mapRepository.getEntityFactoryMap().get(inputClass);
+
+        T[] arrayObjects = (T[]) Validator.validate(strings, entityFactory, clacc);
+
+
         return arrayObjects;
     }
 }
