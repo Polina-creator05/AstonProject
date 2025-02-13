@@ -2,6 +2,6 @@ package sorting;
 
 import java.util.Comparator;
 
-interface SortStrategy<T> {
+public interface SortStrategy<T> {
     void sort(T[] array, Comparator<T> comparator);
 }

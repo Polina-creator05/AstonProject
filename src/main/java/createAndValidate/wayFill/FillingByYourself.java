@@ -7,13 +7,12 @@ import java.util.Scanner;
 
 public class FillingByYourself implements FillingWay {
 
-    ConsoleDataPrinter consoleDataPrinter = new ConsoleDataPrinter();
     ConsoleReader consoleReader = new ConsoleReader();
 
     @Override
     public String[] collecteData(final Integer arrayLenght,  Class<?> clacc) {
         String[] strings = null;
-        consoleDataPrinter.printInfoMessage(Instruction.getMessageReadFromConsole(arrayLenght, clacc));
+        ConsoleDataPrinter.printInfoMessage(Instruction.getMessageReadFromConsole(arrayLenght, clacc));
         Scanner scan = new Scanner(System.in);
 
         int i = 0;
