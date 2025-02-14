@@ -5,13 +5,13 @@ import console.Instruction;
 import console.TableForInstruction;
 import console.Verificator;
 import repository.ArrayOfObjects;
-import writing.list.Writing;
+import writing.array.WritingEXP;
 
 import java.util.Scanner;
 
-public class ChoiceOutput implements Action {
+public class ChoiceOutputEXP implements Action {
 
-    Writing writing = new Writing();
+    WritingEXP writingEXP= new WritingEXP();
     ArrayOfObjects arrayOfObjects = new ArrayOfObjects();
 
     @Override
@@ -23,7 +23,9 @@ public class ChoiceOutput implements Action {
                 if (userInput.equalsIgnoreCase("2")) {
                     break;
                 }
-                writing.writeToFile(arrayOfObjects.getArray());
+                //ConsoleDataPrinter.printInfoMessage("Введите полнoе имя файла, в который желаете записать данные");
+              //  String file = new Scanner(System.in).nextLine();
+                writingEXP.writeToFile(arrayOfObjects.getArray()/*, file*/);
                 break;
             }
         }
