@@ -5,7 +5,7 @@ import console.Instruction;
 import console.TableForInstruction;
 import console.Verificator;
 import repository.ArrayOfObjects;
-import writing.Writing;
+import writing.list.Writing;
 
 import java.util.Scanner;
 
@@ -23,9 +23,7 @@ public class ChoiceOutput implements Action {
                 if (userInput.equalsIgnoreCase("2")) {
                     break;
                 }
-                ConsoleDataPrinter.printInfoMessage("Введите полнoе имя файла, в который желаете записать данные");
-                String file = new Scanner(System.in).nextLine();
-                writing.writeToFile(arrayOfObjects.getArray(), file);
+                writing.writeToFile(arrayOfObjects.getArray());
                 break;
             }
         }
