@@ -1,8 +1,9 @@
-package input.random;
+package createAndValidate.random;
 
 import model.Animal;
 import model.Barrel;
 import model.Person;
+
 
 public class RandomDataFactory {
     private static final Class<?>[] TYPES = {Animal.class, Barrel.class, Person.class};
@@ -21,3 +22,4 @@ public class RandomDataFactory {
         throw new IllegalArgumentException("Неверный тип аргумента!");
     }
 }
+

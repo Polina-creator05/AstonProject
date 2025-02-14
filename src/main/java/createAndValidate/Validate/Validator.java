@@ -1,4 +1,8 @@
-package input;
+package createAndValidate.Validate;
+
+
+import console.ConsoleDataPrinter;
+import createAndValidate.factory.EntityFactory;
 
 import java.lang.reflect.Array;
 
@@ -11,7 +15,7 @@ public class Validator {
             String[] args = line.split(",");
 
             if (args.length != 3) {
-                System.out.println("Неверное количество аргументов в строке: " + line);
+                ConsoleDataPrinter.printErrorMessage("Неверное количество аргументов в строке: " + line);
                 continue;
             }
 
@@ -19,7 +23,7 @@ public class Validator {
                 T entity = factory.create(args);
                 entities[count++] = entity;
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage() + " в строке: " + line);
+                ConsoleDataPrinter.printErrorMessage(e.getMessage() + " в строке: " + line);
             }
         }
         return trimArray(entities, clacc, count);

@@ -1,6 +1,7 @@
-package input;
+package createAndValidate.Validate;
 
 import model.Sex;
+
 
 public class ValidationUtils {
     public static boolean isValidNumber(String input) {
@@ -29,3 +30,4 @@ public class ValidationUtils {
         }
     }
 }
+

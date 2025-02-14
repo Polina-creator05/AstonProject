@@ -1,8 +1,9 @@
-package input.random;
+package createAndValidate.random;
 
 import model.Sex;
 
 import java.util.Random;
+
 
 public class RandomPersonGenerator implements RandomDataProvider {
     private static final Random random = new Random();

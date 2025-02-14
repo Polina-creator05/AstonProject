@@ -2,9 +2,9 @@ package search;
 
 import java.util.Comparator;
 
-public class BinarySearch<T>{
+public class BinarySearchEXP<T>{
 
-    public int search(T[] array, T target, Comparator<T> comparator) {
+    public String search(T[] array, T target, Comparator<T> comparator) {
         int left = 0;
         int right = array.length - 1;
 
@@ -13,14 +13,14 @@ public class BinarySearch<T>{
             int comparison = compareElements(array[mid], target, comparator);
 
             if (comparison == 0) {
-                return mid; // Элемент найден
+                return String.format("Искомый объект находится в массиве под номером %d",mid+1);
             } else if (comparison < 0) {
                 left = mid + 1; // Ищем в правой половине
             } else {
                 right = mid - 1; // Ищем в левой половине
             }
         }
-        return -1; // Элемент не найден
+        return "Объект не найден"; // Элемент не найден
     }
 
     private int compareElements(T element1, T element2, Comparator<T> comparator) {
@@ -28,4 +28,3 @@ public class BinarySearch<T>{
 
     }
 }
-

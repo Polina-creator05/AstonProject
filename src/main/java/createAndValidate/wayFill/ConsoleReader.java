@@ -1,6 +1,8 @@
-package input.console;
+package createAndValidate.wayFill;
+
 
 public class ConsoleReader {
+
     private static String[] data = new String[10];
     private static int count = 0;
 
@@ -25,3 +27,4 @@ public class ConsoleReader {
         return trimmedArray;
     }
 }
+

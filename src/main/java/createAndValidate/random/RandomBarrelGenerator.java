@@ -1,6 +1,7 @@
-package input.random;
+package createAndValidate.random;
 
 import java.util.Random;
+
 
 public class RandomBarrelGenerator implements RandomDataProvider {
     private static final Random random = new Random();
@@ -18,3 +19,4 @@ public class RandomBarrelGenerator implements RandomDataProvider {
         return String.format("%d, %s, %s", volume, storeMaterial, shapeMaterial);
     }
 }
+

@@ -1,6 +1,8 @@
-package input;
+package createAndValidate.factory;
 
+import createAndValidate.Validate.ValidationUtils;
 import model.Barrel;
+
 
 public class BarrelFactory implements EntityFactory<Barrel> {
     @Override

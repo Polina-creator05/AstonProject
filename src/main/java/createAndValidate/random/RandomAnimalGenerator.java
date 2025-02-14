@@ -1,4 +1,4 @@
-package input.random;
+package createAndValidate.random;
 
 import java.util.Random;
 

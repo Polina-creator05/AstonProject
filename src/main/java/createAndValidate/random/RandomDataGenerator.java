@@ -1,4 +1,7 @@
-package input.random;
+package createAndValidate.random;
+
+
+import console.ConsoleDataPrinter;
 
 public class RandomDataGenerator {
     public static String[] generateRandomData(int count, Class<?> type) {
@@ -6,7 +9,7 @@ public class RandomDataGenerator {
         try {
             generator = RandomDataFactory.getGenerator(type);
         } catch (IllegalArgumentException e) {
-            System.out.println(e);
+            ConsoleDataPrinter.printErrorMessage(e.getMessage());
             System.exit(1);
         }
 
@@ -18,3 +21,5 @@ public class RandomDataGenerator {
         return result;
     }
 }
+
+

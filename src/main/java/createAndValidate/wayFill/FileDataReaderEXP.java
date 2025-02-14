@@ -1,14 +1,16 @@
-package input;
+package createAndValidate.wayFill;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileDataReader {
 
-    public static String[] readFile(String filePath) throws IOException, IllegalArgumentException {
-        String[] lines = new String[20];
+public class FileDataReaderEXP {
+
+    public static String[] readFile(String filePath, int arrayLength) throws IOException, IllegalArgumentException {
+        String[] lines = new String[arrayLength];
         int count = 0;
+
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -20,7 +22,7 @@ public class FileDataReader {
                     continue;
 
                 if (count == lines.length) {
-                    lines = expandArray(lines);
+                    break;
                 }
                 lines[count++] = line;
             }
@@ -31,12 +33,6 @@ public class FileDataReader {
         }
 
         return trimArray(lines, count);
-    }
-
-    private static String[] expandArray(String[] array) {
-        String[] newArray = new String[array.length * 2];
-        System.arraycopy(array, 0, newArray, 0, array.length);
-        return newArray;
     }
 
     private static String[] trimArray(String[] array, int size) {

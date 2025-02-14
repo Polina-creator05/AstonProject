@@ -1,6 +1,8 @@
-package input;
+package createAndValidate.factory;
 
+import createAndValidate.Validate.ValidationUtils;
 import model.Animal;
+
 
 public class AnimalFactory implements EntityFactory<Animal>{
     @Override
