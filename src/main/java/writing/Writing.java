@@ -31,6 +31,7 @@ public class Writing<T> {
         }else if (exceptionInvalidPath[0]!= null){
             ConsoleDataPrinter.printErrorMessage(exceptionInvalidPath[0]);
         }else ConsoleDataPrinter.printInfoMessage("Запись в файл проведена успешно");
+
     }
 }
 

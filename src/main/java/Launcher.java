@@ -4,7 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.Callable;
 
-public class Launcher {
+public class
+Launcher {
     public static void main(final String[] args) {
         Action[] actions = {new ChoiceClass(),
                 new ChoiceLength(),
