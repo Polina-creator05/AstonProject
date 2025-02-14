@@ -62,7 +62,8 @@ public class Instruction {
 
 
     public static String getMessageReadFromConsole(Integer arrayLength,  Class<?> clacc) {
-        return String.format(messageReadFromConsole, clacc,arrayLength);
+        String currentClacc = getString(clacc);
+        return String.format(messageReadFromConsole, currentClacc,arrayLength);
 
     }
 
@@ -71,12 +72,19 @@ public class Instruction {
     }
 
     public static String getMessageObject(Class<?> clacc) {
-        String currentClacc= clacc.toString();
-        int index = currentClacc.indexOf(".");
-        return String.format(messageObject, currentClacc.substring(index+1));
+        String currentClacc = getString(clacc);
+        return String.format(messageObject, currentClacc);
     }
 
     public static String getMessageWriteToFile() {
         return messageWriteToFile;
     }
+
+    private static String getString(final Class<?> clacc) {
+        String currentClacc= clacc.toString();
+        int index = currentClacc.indexOf(".");
+        currentClacc= currentClacc.substring(index+1);
+        return currentClacc;
+    }
+
 }
