@@ -16,11 +16,9 @@ public class Barrel{
 
     @Override
     public String toString() {
-        return "component.Barrel{" +
-                "volume=" + volume +
-                ", storeMaterial='" + storeMaterial + '\'' +
-                ", shapeMaterial='" + shapeMaterial + '\'' +
-                '}';
+        return volume +
+                ", " + storeMaterial +
+                ", " +shapeMaterial;
     }
 
     @Override

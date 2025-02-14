@@ -16,14 +16,14 @@ public class Animal implements Comparable<Animal>{
         this.wool = wool;
     }
 
+
     @Override
     public String toString() {
-        return "component.Animal{" +
-                "species='" + species + '\'' +
-                ", eyeColor='" + eyeColor + '\'' +
-                ", wool=" + wool +
-                '}';
+        return species +
+                ", " + eyeColor +
+                ", " + wool;
     }
+
 
     @Override
     public boolean equals(final Object o) {
