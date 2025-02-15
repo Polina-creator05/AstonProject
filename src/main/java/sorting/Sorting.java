@@ -13,16 +13,18 @@ import java.util.Map;
 
 public class Sorting {
 
-    MapRepository mapRepository= new MapRepository();
+    MapRepository mapRepository = new MapRepository();
     ArrayOfObjects arrayOfObjects = new ArrayOfObjects();
 
 
-
     public void getSortedArray(String inputClass, String userInput) {
-        Sorter sorter= new Sorter();
-        sorter.setStrategy(mapRepository.getSortStrategyMap().get(userInput));
-        sorter.sort(arrayOfObjects.getArray(),mapRepository.getComparatorMap().get(inputClass));
+        Sorter sorter = new Sorter();
+        if (userInput.equals("1")) {
+            sorter.setStrategy(mapRepository.getSortStrategyMap().get(userInput));
+        } else {
+            sorter.setStrategy(mapRepository.getSortStrategyMap().get(inputClass));
+        }
+        sorter.sort(arrayOfObjects.getArray(), mapRepository.getComparatorMap().get(inputClass));
 
     }
-
 }

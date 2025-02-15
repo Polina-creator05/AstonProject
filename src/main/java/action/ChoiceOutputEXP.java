@@ -23,9 +23,7 @@ public class ChoiceOutputEXP implements Action {
                 if (userInput.equalsIgnoreCase("2")) {
                     break;
                 }
-                //ConsoleDataPrinter.printInfoMessage("Введите полнoе имя файла, в который желаете записать данные");
-              //  String file = new Scanner(System.in).nextLine();
-                writingEXP.writeToFile(arrayOfObjects.getArray()/*, file*/);
+                writingEXP.writeToFile(arrayOfObjects.getArray());
                 break;
             }
         }

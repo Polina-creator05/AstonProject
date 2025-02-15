@@ -1,13 +1,17 @@
 import action.*;
 
-public class LauncherEXP {
+import java.util.InputMismatchException;
+import java.util.Scanner;
+import java.util.concurrent.Callable;
+
+public class LauncherWithList {
     public static void main(final String[] args) {
-               Action[] actions = {new ChoiceClass(),
+        Action[] actions = {new ChoiceClass(),
                 new ChoiceLength(),
                 new ChoiceWayFill(),
                 new ChoiceSort(),
                 new ChoiceSearch(),
-                new ChoiceOutputEXP(),
+                new ChoiceOutput(),
                 new ChoiceContinue()};
 
 
